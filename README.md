@@ -23,6 +23,8 @@ CDDD
 ### Install via Anaconda (recommended way)
 Create a conda environment:
 ```bash
+git https://github.com/YiYuDL/CRNNTL.git
+cd CRNNTL
 conda env create -f environment.yml
 source activate CRNNTL
 python setup.py install
