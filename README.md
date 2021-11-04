@@ -10,7 +10,7 @@ The input of modelling is the latent representation derived from autoencoders (A
 
 https://github.com/jrwnter/cddd
 ```
-python 3.7
+python 3.6
 tensorflow 1.14.0
 numpy <= 1.16.4
 pandas <= 1.2.4
