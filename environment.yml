@@ -1,21 +1,17 @@
-name: chemvae
+name: CRNNTL
 channels:
   - rdkit
   - conda-forge
 
 dependencies:
-  - keras=2.0.6
-  - tensorflow
-  - h5py
-  - hdf5
-  - pandas
-  - python=3
+  - python=3.6
+  - tensorflow=1.14.0
+  - numpy=1.16.4
+  - pandas=1.2.4
   - scikit-learn
-  - boost
+  - pytorch=1.2.0
+  - skorch==0.10.0
   - rdkit
-  - yaml
-  - numpy
-  - matplotlib
 
 
 
