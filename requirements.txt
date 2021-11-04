@@ -1,6 +1,0 @@
-tensorflow==1.14.0
-numpy==1.16.4
-pandas==1.2.4
-scikit-learn
-pytorch==1.2.0
-skorch==0.10.0
