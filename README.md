@@ -20,16 +20,15 @@ pytorch 1.2.0
 skorch 0.10.0
 CDDD
 ```
-### install via Anaconda (recommended way)
+### Install via Anaconda (recommended way)
 Create a conda environment:
 ```bash
 conda env create -f environment.yml
 source activate CRNNTL
 python setup.py install
-```bash
+```
 
-
-## Getting Started
+## Getting start
 The fibroblast growth factor receptor (fgfr1) will be taken as an instance. Other datasets in our package could be used, as well as datasets from other source.
 ### Data Preprocessing
 Extracting latent representation and classes splitting:
