@@ -20,18 +20,14 @@ pytorch 1.2.0
 skorch 0.10.0
 CDDD
 ```
-### Conda
-Clone and Create a new environment:
+### install via Anaconda (recommended way)
+Create a conda environment:
 ```bash
-git clone https://github.com/YiYuDL/CRNNTL.git
-cd CRNNTL
-conda create -n CRNNTL python=3.7
+conda env create -f environment.yml
 source activate CRNNTL
-```
-And install the CRNNTL package:
+python setup.py install
 ```bash
-pip install .
-```
+
 
 ## Getting Started
 The fibroblast growth factor receptor (fgfr1) will be taken as an instance. Other datasets in our package could be used, as well as datasets from other source.
