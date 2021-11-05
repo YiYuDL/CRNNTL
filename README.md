@@ -31,7 +31,7 @@ python setup.py install
 ```
 
 ## Getting start
-The fibroblast growth factor receptor (fgfr1) will be taken as an instance. Other datasets in our package could be used, as well as datasets from other source.
+The fibroblast growth factor receptor (fgfr1) will be taken as an instance. Other datasets in our package could be used, as well as datasets from other source. The test.py file can be runned directly to check the import among different modules. Or different modules could be tested along in the pipeline below.
 ### Data Preprocessing
 Extracting latent representation and classes splitting:
 ```python
