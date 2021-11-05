@@ -2,6 +2,7 @@ name: CRNNTL
 channels:
   - rdkit
   - conda-forge
+  - pytorch
 
 dependencies:
   - python=3.6
