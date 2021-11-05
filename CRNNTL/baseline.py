@@ -65,4 +65,4 @@ def SVM(file):
                                   n_jobs=5)
         result = np.mean(result)
         print('baseline AUC-ROC',"%0.2f"%(result))
- 
+    return result
