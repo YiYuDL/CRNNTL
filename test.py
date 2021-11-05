@@ -17,5 +17,4 @@ def main():
     print('baseline SVM',"%0.2f"%(SVM_result))
     
 if __name__ == "__main__":
-   
     main()
