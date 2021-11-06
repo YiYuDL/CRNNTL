@@ -13,7 +13,7 @@ from skorch import NeuralNetRegressor
 from skorch.dataset import Dataset
 from skorch.helper import predefined_split
 from skorch.callbacks import EpochScoring,EarlyStopping
-from model import *
+from CRNNTL.model import *
 import torch
 from sklearn.svm import SVR
 import torch.nn as nn
