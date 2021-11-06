@@ -13,13 +13,8 @@ from rdkit.Chem.SaltRemover import SaltRemover
 from cddd.inference import InferenceModel
 from sklearn.model_selection import StratifiedKFold, KFold
 
-def data_pre(file):
-# input csv
-    file = 'datasets/' + file + '.csv'
-    df = pd.read_csv(file,encoding='gb18030')
-                   
-    print('number of molecules before cleanning',len(df))
-       
+def data_pre(df):
+    
     df1 = df['smiles'].astype('str')
     
 # transfer the smile into consistent format
