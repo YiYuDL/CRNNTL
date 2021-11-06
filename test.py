@@ -7,8 +7,9 @@ Created on Fri Nov  5 18:45:54 2021
 from CRNNTL.preprocessing import data_pre
 from CRNNTL.train import CNN_CRNN_train
 from CRNNTL.baseline import SVM
+from absl import app
 
-def main():
+def main(argv):
     X_fgfr1, DF_fgfr1 = data_pre('fgfr1')
     CNN_result,CRNN_result = CNN_CRNN_train(X_fgfr1, DF_fgfr1)
     SVM_result = SVM('fgfr1')
@@ -17,4 +18,4 @@ def main():
     print('baseline SVM',"%0.2f"%(SVM_result))
     
 if __name__ == "__main__":
-    main()
+    app.run(main)
