@@ -14,7 +14,7 @@ from skorch.helper import predefined_split
 from sklearn.model_selection._validation import _fit_and_score
 from skorch.callbacks import EpochScoring,EarlyStopping
 from sklearn.metrics._scorer import check_scoring
-from model import *
+from CRNNTL.model import *
 import torch
 import torch.nn as nn
 
