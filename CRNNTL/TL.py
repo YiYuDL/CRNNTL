@@ -19,11 +19,14 @@ from sklearn.metrics._scorer import check_scoring
 from CRNNTL.model import *
 import torch
 import torch.nn as nn
+import pandas as pd
 
 def TL(source, target):
 
 # source training
-    Xs, DFs = data_pre(source)
+    source_file = 'datasets/' + source + '.csv'
+    source_df = pd.read_csv(source_file,index_col = False)
+    Xs, DFs = data_pre(source_df)
     yy = DFs['label']
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu' 
@@ -200,7 +203,9 @@ def TL(source, target):
         
     
 #learning from scratch
-    Xt, DFt = data_pre(target)
+    target_file = 'datasets/' + target + '.csv'
+    target_df = pd.read_csv(target_file,index_col = False)
+    Xt, DFt = data_pre(target_df)
     result, result2 = CNN_CRNN_train(Xt,DFt)
     print('learning from scratch:', result2)
     
