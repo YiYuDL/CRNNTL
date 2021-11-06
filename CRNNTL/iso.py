@@ -17,10 +17,12 @@ from CRNNTL.model import *
 import torch
 from sklearn.svm import SVR
 import torch.nn as nn
+import pandas as pd
 
 def iso_CNN_CRNN_SVM(file):
-    
-    Xi, DFi = data_pre(file)
+    file_name = 'datasets/' + file + '.csv'
+    iso_df = pd.read_csv(file_name, index_col=False)
+    Xi, DFi = data_pre(iso_df)
     
     yy = DFi['label']
     
