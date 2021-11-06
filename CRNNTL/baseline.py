@@ -10,10 +10,9 @@ from CRNNTL.preprocessing import data_pre
 from sklearn.svm import SVC, SVR
 from sklearn.model_selection import cross_val_score, LeaveOneGroupOut    
 
-def SVM(file):
-    
+def SVM(df):
 
-    Xi, DFi = data_pre(file)
+    Xi, DFi = data_pre(df)
     yy = DFi['label']
     
     if yy.isin([0,1]).all() == False:
