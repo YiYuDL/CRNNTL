@@ -36,7 +36,9 @@ The fibroblast growth factor receptor (fgfr1) will be taken as an instance. Othe
 Extracting latent representation and classes splitting:
 ```python
 from CRNNTL.preprocessing import data_pre
-X_fgfr1, DF_fgfr1 = data_pre('fgfr1') 
+import pandas as pd
+fgfr1_df = pd.read_csv('datasets/fgfr1.csv', index_col=False)
+X_fgfr1, DF_fgfr1 = data_pre(fgfr1_df) 
 ```
 
 ### CNN and CRNN Modelling
@@ -48,7 +50,9 @@ CNN_result,CRNN_result = CNN_CRNN_train(X_fgfr1, DF_fgfr1)
 ### Baseline
 ```python
 from CRNNTL.baseline import SVM
-SVM('fgfr1')
+import pandas as pd
+fgfr1_df = pd.read_csv('datasets/fgfr1.csv', index_col=False)
+SVM(fgfr1_df)
 ```
 
 ### Data Augmentation and AugCRNN modelling
