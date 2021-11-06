@@ -5,8 +5,8 @@ Created on Wed Jul 21 13:58:17 2021
 @author: yuyi6
 """
  
-from preprocessing import data_pre
-from train import CNN_CRNN_train
+from CRNNTL.preprocessing import data_pre
+from CRNNTL.train import CNN_CRNN_train
 from sklearn.base import clone
 from sklearn.model_selection import LeaveOneGroupOut
 import numpy as np
@@ -16,7 +16,7 @@ from skorch.helper import predefined_split
 from sklearn.model_selection._validation import _fit_and_score
 from skorch.callbacks import EpochScoring,EarlyStopping
 from sklearn.metrics._scorer import check_scoring
-from model import *
+from CRNNTL.model import *
 import torch
 import torch.nn as nn
 
