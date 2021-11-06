@@ -11,7 +11,7 @@ from absl import app
 import pandas as pd
 
 def main(argv):
-    fgfr1_df = pd.read_csv('datasets/fgfr1.csv', index_col=0)
+    fgfr1_df = pd.read_csv('datasets/fgfr1.csv', index_col=False)
     X_fgfr1, DF_fgfr1 = data_pre(fgfr1_df)
     CNN_result,CRNN_result = CNN_CRNN_train(X_fgfr1, DF_fgfr1)
     SVM_result = SVM(fgfr1_df)
