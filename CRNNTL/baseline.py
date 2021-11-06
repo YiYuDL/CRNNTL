@@ -6,7 +6,7 @@ Created on Tue Jun 29 21:41:10 2021
 """
 
 import numpy as np
-from preprocessing import data_pre
+from CRNNTL.preprocessing import data_pre
 from sklearn.svm import SVC, SVR
 from sklearn.model_selection import cross_val_score, LeaveOneGroupOut    
 
