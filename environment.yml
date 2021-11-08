@@ -1,4 +1,4 @@
-name: CRNNTL2
+name: CRNNTL
 channels:
   - rdkit
   - conda-forge
