@@ -24,6 +24,15 @@ import torch.nn as nn
 def augCRNN_train(X,DF,augX,augDF):
     
     yy = DF['label']
+    
+    batch = len(DF)
+    if DF_len >= 300:
+        batch = 128
+    elif 100 < DF_len < 300:
+        batch = 64
+    else:
+        batch = 32
+    
     device = 'cuda' if torch.cuda.is_available() else 'cpu' 
     if yy.isin([0,1]).all() == False:
         task = 'r2'
@@ -88,7 +97,7 @@ def augCRNN_train(X,DF,augX,augDF):
             
             net = NeuralNetRegressor(
                 CRNN_reg,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
@@ -133,7 +142,7 @@ def augCRNN_train(X,DF,augX,augDF):
             net = NeuralNetRegressor(
                 module=CRNN_reg,
                 train_split=predefined_split(valid_ds),
-                batch_size=250,
+                batch_size=batch,
                 max_epochs= max_epochs,
                 optimizer = torch.optim.Adam,
                 lr= 0.0005,
@@ -159,7 +168,7 @@ def augCRNN_train(X,DF,augX,augDF):
             net = NeuralNetRegressor(
                 module=CRNN_reg,
                 train_split=predefined_split(valid_ds),
-                batch_size=250,
+                batch_size=batch,
                 max_epochs= max_epochs,
                 optimizer = torch.optim.Adam,
                 lr= 0.00003,
@@ -235,7 +244,7 @@ def augCRNN_train(X,DF,augX,augDF):
             
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
@@ -274,7 +283,7 @@ def augCRNN_train(X,DF,augX,augDF):
                 
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
@@ -300,7 +309,7 @@ def augCRNN_train(X,DF,augX,augDF):
             
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
