@@ -28,7 +28,7 @@ def CNN_CRNN_train(X,DF):
     elif 100 < DF_len < 300:
         batch = 64
     else:
-        batch = 32
+        batch = 24
 
    
     if yy.isin([0,1]).all() == False:
