@@ -31,7 +31,7 @@ def augCRNN_train(X,DF,augX,augDF):
     elif 100 < DF_len < 300:
         batch = 64
     else:
-        batch = 32
+        batch = 24
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu' 
     if yy.isin([0,1]).all() == False:
