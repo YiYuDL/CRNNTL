@@ -21,6 +21,15 @@ import torch.nn as nn
 def CNN_CRNN_train(X,DF):
     
     yy = DF['label']
+    DF_len = len(DF)
+    
+    if DF_len >= 300:
+        batch = 128
+    elif 100 < DF_len < 300:
+        batch = 64
+    else:
+        batch = 32
+
    
     if yy.isin([0,1]).all() == False:
 # start cross validation for regression  
@@ -61,7 +70,7 @@ def CNN_CRNN_train(X,DF):
             
             net = NeuralNetRegressor(
                 CRNN_reg,
-                batch_size=128,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,  
@@ -97,7 +106,7 @@ def CNN_CRNN_train(X,DF):
             net = NeuralNetRegressor(
                 module=CRNN_reg,
                 train_split=predefined_split(valid_ds),
-                batch_size=128,
+                batch_size=batch,
                 max_epochs= max_epochs,
                 optimizer = torch.optim.Adam,
                 lr= 0.0005,
@@ -123,7 +132,7 @@ def CNN_CRNN_train(X,DF):
             net = NeuralNetRegressor(
                 module=CRNN_reg,
                 train_split=predefined_split(valid_ds),
-                batch_size=128,
+                batch_size=batch,
                 max_epochs= max_epochs,
                 optimizer = torch.optim.Adam,
                 lr= 0.00003,
@@ -179,7 +188,7 @@ def CNN_CRNN_train(X,DF):
             
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
@@ -218,7 +227,7 @@ def CNN_CRNN_train(X,DF):
                 
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
@@ -244,7 +253,7 @@ def CNN_CRNN_train(X,DF):
             
             net = NeuralNetClassifier(
                 CRNN_cla,
-                batch_size=250,
+                batch_size=batch,
                 train_split=predefined_split(valid_ds),
                 optimizer = torch.optim.Adam,
                 max_epochs= max_epochs,
