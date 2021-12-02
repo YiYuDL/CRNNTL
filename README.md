@@ -77,6 +77,6 @@ iso_CNN_CRNN_SVM('isomers')
 ```
 
 ### References
-[1] Y. Li, Y. Xu, Y. Yu, CRNNTL: convolutional recurrent neural network and transfer learning for QSAR modelling in organic drug and material discovery, 2021, Preprint: https://arxiv.org/abs/2109.03309
+[1] Li, Y.; Xu, Y.; Yu, Y. CRNNTL: Convolutional Recurrent Neural Network and Transfer Learning for QSAR Modeling in Organic Drug and Material Discovery. Molecules 2021, 26, 7257. https://doi.org/10.3390/molecules26237257
 
 [2] R. Winter, F. Montanari, F. Noe and D. Clevert, Learning Continuous and Data-Driven Molecular Descriptors by Translating Equivalent Chemical Representations Chem. Sci, 2019, 10, 1692-1701.
