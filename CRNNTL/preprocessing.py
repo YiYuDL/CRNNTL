@@ -87,7 +87,7 @@ def data_pre(df):
             
             List1 = []
             
-            for train_index, val_index in SKF.split(X):
+            for train_index, val_index in SKF.split(y):
                 
                 combined = np.vstack((y[val_index],val_index))
                 list0 = combined.tolist()
